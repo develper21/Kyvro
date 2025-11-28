@@ -12,7 +12,8 @@ app.on('web-contents-created', (_, contents) => {
   
   contents.on('will-navigate', (navigationEvent, navigationUrl) => {
     const parsedUrl = new URL(navigationUrl);
-    if (parsedUrl.origin !== 'http://localhost:5173') {
+    const allowedOrigins = ['http://localhost:5173', 'https://develper21.github.io'];
+    if (!allowedOrigins.includes(parsedUrl.origin)) {
       navigationEvent.preventDefault();
     }
   });
@@ -37,6 +38,7 @@ let mainWindow: BrowserWindow | null = null;
 let splashWindow: BrowserWindow | null = null;
 
 const isDev = process.env.NODE_ENV === 'development';
+const isWeb = process.env.KYVRO_WEB === 'true';
 
 function createSplashWindow(): void {
   splashWindow = new BrowserWindow({

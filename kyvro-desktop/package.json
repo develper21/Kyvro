@@ -1,15 +1,38 @@
 {
   "name": "kyvro-desktop",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "WhatsApp Business Campaign Management Desktop Application",
+  "main": "dist-electron/main.js",
+  "homepage": "https://develper21.github.io/Kyvro/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run dev:vite\" \"wait-on http://localhost:5173 && npm run dev:electron\"",
+    "dev:vite": "vite",
+    "dev:electron": "electron .",
+    "build": "vite build",
+    "build:electron": "npm run build && tsc -p electron/tsconfig.json",
+    "dist": "npm run build:electron && electron-builder",
+    "dist:linux": "npm run build:electron && electron-builder --linux",
+    "dist:win": "npm run build:electron && electron-builder --windows",
+    "dist:mac": "npm run build:electron && electron-builder --mac",
+    "dist:all": "npm run build:electron && electron-builder --mac --win --linux",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "whatsapp",
+    "marketing",
+    "campaign",
+    "desktop",
+    "electron",
+    "react"
+  ],
+  "author": "Kyvro Team",
+  "license": "MIT",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/three": "^0.181.0",
     "axios": "^1.13.2",
     "better-sqlite3": "^12.4.6",
@@ -42,10 +65,137 @@
     "electron": "^39.2.4",
     "electron-builder": "^26.0.12",
     "eslint": "^9.39.1",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "vite": "^7.2.4",
     "wait-on": "^9.0.3"
+  },
+  "build": {
+    "appId": "com.kyvro.desktop",
+    "productName": "Kyvro Desktop",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources",
+        "to": "resources",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "snap",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Office",
+      "icon": "resources/icon.png",
+      "desktop": {
+        "Name": "Kyvro Desktop",
+        "Comment": "WhatsApp Business Campaign Management",
+        "Categories": [
+          "Office",
+          "Development"
+        ]
+      }
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "resources/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "resources/icon.icns",
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": true,
+      "entitlements": "resources/entitlements.mac.plist",
+      "entitlementsInherit": "resources/entitlements.mac.plist"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "snap": {
+      "plugs": [
+        "default",
+        "desktop",
+        "desktop-legacy",
+        "home",
+        "x11",
+        "unity7",
+        "browser-support",
+        "network",
+        "gsettings",
+        "audio-playback",
+        "pulseaudio",
+        "opengl"
+      ]
+    }
   }
 }
