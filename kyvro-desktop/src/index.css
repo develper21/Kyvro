@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/5;
+  }
+  
+  .glass-card {
+    @apply bg-[#2f3136]/80 backdrop-blur-md border border-white/10;
+  }
+  
+  .scrollbar-discord {
+    scrollbar-width: thin;
+    scrollbar-color: #202225 transparent;
+  }
+  
+  .scrollbar-discord::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-discord::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-discord::-webkit-scrollbar-thumb {
+    background: #202225;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-discord::-webkit-scrollbar-thumb:hover {
+    background: #40444b;
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #40444b transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #40444b;
+    border-radius: 2px;
+  }
+}
