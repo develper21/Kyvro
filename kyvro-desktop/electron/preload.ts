@@ -94,14 +94,14 @@ declare global {
 }
 
 // Additional security: Prevent access to Node.js globals
-delete (window as any).require;
-delete (window as any).exports;
-delete (window as any).module;
-delete (window as any).process;
-delete (window as any).global;
-delete (window as any).Buffer;
-delete (window as any).setImmediate;
-delete (window as any).clearImmediate;
+delete (globalThis as any).require;
+delete (globalThis as any).exports;
+delete (globalThis as any).module;
+delete (globalThis as any).process;
+delete (globalThis as any).global;
+delete (globalThis as any).Buffer;
+delete (globalThis as any).setImmediate;
+delete (globalThis as any).clearImmediate;
 
 // Console logging for debugging in development
 if (process.env.NODE_ENV === 'development') {

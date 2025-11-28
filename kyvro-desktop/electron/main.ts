@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, ipcMain, security, protocol } from 'electron';
+import { app, BrowserWindow, Menu, ipcMain, protocol } from 'electron';
 import { join } from 'path';
 import { existsSync } from 'fs';
 import { SecureStore } from './services/secureStore';
@@ -6,15 +6,15 @@ import { WhatsAppApiService } from './services/whatsappApi';
 
 // Security: Disable Node.js integration for all renderer processes
 app.on('web-contents-created', (_, contents) => {
-  contents.on('new-window', (navigationEvent) => {
-    navigationEvent.preventDefault();
+  contents.setWindowOpenHandler(({ url }) => {
+    return { action: 'deny' };
   });
   
-  contents.on('will-navigate', (navigationEvent, navigationUrl) => {
+  contents.on('will-navigate', (event, navigationUrl) => {
     const parsedUrl = new URL(navigationUrl);
     const allowedOrigins = ['http://localhost:5173', 'https://develper21.github.io'];
     if (!allowedOrigins.includes(parsedUrl.origin)) {
-      navigationEvent.preventDefault();
+      event.preventDefault();
     }
   });
 });
@@ -52,7 +52,6 @@ function createSplashWindow(): void {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      enableRemoteModule: false,
       preload: join(__dirname, 'preload.js')
     }
   });
@@ -78,7 +77,6 @@ function createMainWindow(): void {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      enableRemoteModule: false,
       preload: join(__dirname, 'preload.js'),
       webSecurity: true,
       allowRunningInsecureContent: false,
