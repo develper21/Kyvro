@@ -16,7 +16,7 @@ if (container) {
 // Disable Electron-specific features in web version
 if (typeof window !== 'undefined') {
   // Set web mode flag
-  window.KYVRO_WEB = true;
+  (window as any).KYVRO_WEB = true;
   
   // Mock Electron APIs for web compatibility
   (window as any).electronAPI = {

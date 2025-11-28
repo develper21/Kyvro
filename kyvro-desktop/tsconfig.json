@@ -41,8 +41,7 @@
   },
   "include": [
     "src",
-    "src/types",
-    "vite.config.ts"
+    "src/types"
   ],
   "exclude": [
     "node_modules",

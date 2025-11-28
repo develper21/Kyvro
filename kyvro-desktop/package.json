@@ -111,18 +111,14 @@
         {
           "target": "nsis",
           "arch": [
-            "x64",
-            "ia32"
+            "x64"
           ]
         },
         {
           "target": "portable",
-          "arch": [
-            "x64"
-          ]
+          "arch": ["x64"]
         }
       ],
-      "icon": "resources/icon.ico",
       "requestedExecutionLevel": "asInvoker"
     },
     "mac": {
@@ -142,11 +138,7 @@
           ]
         }
       ],
-      "icon": "resources/icon.icns",
-      "category": "public.app-category.productivity",
-      "hardenedRuntime": true,
-      "entitlements": "resources/entitlements.mac.plist",
-      "entitlementsInherit": "resources/entitlements.mac.plist"
+      "category": "public.app-category.productivity"
     },
     "nsis": {
       "oneClick": false,
