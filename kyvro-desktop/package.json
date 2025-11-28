@@ -19,7 +19,11 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "release:linux": "npm run build:electron && electron-builder --linux && echo 'Linux builds ready in release/ folder'",
+    "release:win": "npm run build:electron && electron-builder --windows && echo 'Windows builds ready in release/ folder'",
+    "release:mac": "npm run build:electron && electron-builder --mac && echo 'macOS builds ready in release/ folder'",
+    "release:all": "npm run build:electron && electron-builder --mac --win --linux && echo 'All builds ready in release/ folder'"
   },
   "keywords": [
     "whatsapp",
