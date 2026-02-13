@@ -1,397 +1,155 @@
 <div align="center">
-
-# 🚀 Kyvro Desktop
-
-[![Electron](https://img.shields.io/badge/Electron-2024E4E?style=for-the-badge&logo=electron&logoColor=white)](https://electronjs.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
-
-**📱 Advanced WhatsApp Business Desktop Application**
-
-*Discord-style UI • 3D Animations • Enterprise-grade Security*
-
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg?style=for-the-badge)](package.json)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg?style=for-the-badge)](#)
-
----
-
+    <br />
+    <p>
+        <a href="https://wwebjs.dev"><img src="https://github.com/wwebjs/assets/blob/main/Collection/GitHub/wwebjs.png?raw=true" title="whatsapp-web.js" alt="WWebJS Website" width="500" /></a>
+    </p>
+    <br />
+    <p>
+		<a href="https://www.npmjs.com/package/whatsapp-web.js"><img src="https://img.shields.io/npm/v/whatsapp-web.js.svg" alt="npm" /></a>
+        <a href="https://depfu.com/github/pedroslopez/whatsapp-web.js?project_id=9765"><img src="https://badges.depfu.com/badges/4a65a0de96ece65fdf39e294e0c8dcba/overview.svg" alt="Depfu" /></a>
+        <img src="https://img.shields.io/badge/WhatsApp_Web-2.3000.1017054665-brightgreen.svg" alt="WhatsApp_Web 2.2346.52" />
+        <a href="https://discord.gg/H7DqQs4"><img src="https://img.shields.io/discord/698610475432411196.svg?logo=discord" alt="Discord server" /></a>
+	</p>
+    <br />
 </div>
 
-## 📖 क्या है Kyvro?
+## About
+**A WhatsApp API client that operates via the WhatsApp Web browser.**
 
-**Kyvro** एक powerful desktop application है जो WhatsApp Business API को manage करने के लिए बनाया गया है। यह Discord-style UI के साथ आता है और enterprise-level features provide करता है।
+The library launches the WhatsApp Web browser app via Puppeteer, accessing its internal functions and creating a managed instance to reduce the risk of being blocked. This gives the API client nearly all WhatsApp Web features for dynamic use in a Node.js application.
 
-### 🎯 मुख्य Features
+> [!IMPORTANT]
+> **It is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.**
 
-- 🚀 **3D Animations** - Three.js और GSAP के साथ stunning visual effects
-- 📱 **Campaign Management** - Advanced WhatsApp campaigns with real-time tracking
-- 🔒 **Enterprise Security** - AES-256 encryption और secure credential storage
-- 📊 **Analytics Dashboard** - Real-time statistics और performance metrics
-- 🎨 **Discord-style UI** - Modern, glassmorphic design with smooth animations
-- ⚡ **High Performance** - Web Workers और smart queuing system
-- 🔄 **Auto Scheduling** - Campaign scheduling और automated workflows
+## Links
 
----
+* [GitHub][gitHub]
+* [Guide][guide] ([source][guide-source])
+* [Documentation][documentation] ([source][documentation-source])
+* [Discord Server][discord]
+* [npm][npm]
 
-## 🛠️ Technology Stack
+## Installation
 
-### Frontend Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **React** | UI Framework | 18.x |
-| **TypeScript** | Type Safety | 5.x |
-| **TailwindCSS** | Styling | 3.x |
-| **Framer Motion** | Animations | 10.x |
-| **Three.js** | 3D Graphics | r128 |
-| **GSAP** | Advanced Animations | 3.x |
-| **Zustand** | State Management | 4.x |
+The module is available on [npm][npm] via `npm i whatsapp-web.js`!
 
-### Backend Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **Electron** | Desktop Framework | 28.x |
-| **SQLite** | Local Database | better-sqlite3 |
-| **Node.js** | Runtime | 20.x |
-| **Keytar** | Secure Storage | latest |
+> [!NOTE]
+> **Node ``v18`` or higher, is required.**  
+> See the [Guide][guide] for quick upgrade instructions.
 
-### Development Tools
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **Vite** | Build Tool | 5.x |
-| **ESLint** | Code Quality | 8.x |
-| **Prettier** | Code Formatting | 3.x |
+## Example usage
 
----
+```js
+const { Client } = require('whatsapp-web.js');
 
-## 🚀 Installation
+const client = new Client();
 
-### Prerequisites
-- **Node.js** 20.x या उससे नया version
-- **npm** या **yarn** package manager
-- **Git** for version control
-
-### Quick Start
-```bash
-# Clone the repository
-git clone https://github.com/your-username/kyvro-desktop.git
-cd kyvro-desktop
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
-### Development Commands
-```bash
-# Development
-npm run dev          # Start development server
-npm run electron:dev # Start Electron in dev mode
-
-# Building
-npm run build        # Build React app
-npm run electron:build # Build Electron app
-npm run dist         # Create distributable
-
-# Testing
-npm run test         # Run tests
-npm run lint         # Run ESLint
-npm run type-check   # TypeScript type checking
-```
-
----
-
-## 📱 Features Overview
-
-### 🎨 Discord-style Interface
-- **Glassmorphic Design** - Modern blur effects और transparency
-- **Smooth Animations** - 60fps transitions और micro-interactions
-- **Dark Theme** - Eye-friendly dark mode
-- **Responsive Layout** - Multiple screen sizes पर perfect display
-
-### 📊 Campaign Management
-- **Multi-step Campaign Creation** - Guided wizard interface
-- **CSV Import** - Drag & drop contact import
-- **Template Selection** - WhatsApp template management
-- **Real-time Progress** - Live campaign tracking
-- **Smart Scheduling** - Advanced scheduling options
-
-### 🔒 Security Features
-- **AES-256 Encryption** - Military-grade encryption
-- **Secure Storage** - System keychain integration
-- **API Key Protection** - Encrypted credential storage
-- **Data Privacy** - Local-first approach
-
-### ⚡ Performance
-- **Web Workers** - Background processing
-- **Smart Queuing** - Rate limiting और retry logic
-- **Caching** - Optimized data handling
-- **Memory Management** - Efficient resource usage
-
----
-
-## 🏗️ Project Structure
-
-```
-kyvro-desktop/
-├── 📁 electron/                 # Electron main process
-│   ├── main.ts                  # Main window setup
-│   ├── preload.ts               # Secure IPC bridge
-│   └── services/                # Backend services
-│       ├── databaseService.ts   # SQLite management
-│       ├── fileService.ts       # File operations
-│       ├── notificationService.ts # System notifications
-│       ├── schedulerService.ts  # Task scheduling
-│       ├── secureStore.ts       # Encrypted storage
-│       └── whatsappApi.ts      # WhatsApp API client
-├── 📁 src/                      # React frontend
-│   ├── components/              # UI components
-│   │   ├── layout/              # Layout components
-│   │   ├── ui/                  # Reusable UI components
-│   │   └── AnimatedLogo.tsx    # 3D animated logo
-│   ├── features/                # Feature modules
-│   │   ├── dashboard/           # Dashboard UI
-│   │   └── campaigns/           # Campaign management
-│   ├── assets/                  # Static assets
-│   │   └── animations/          # 3D animations
-│   ├── lib/                     # Utility libraries
-│   └── workers/                 # Web workers
-├── 📁 public/                   # Public assets
-├── 📄 package.json             # Dependencies
-├── 📄 tsconfig.json            # TypeScript config
-├── 📄 tailwind.config.js       # Tailwind config
-├── 📄 vite.config.ts           # Vite build config
-└── 📄 .gitignore               # Git ignore rules
-```
-
----
-
-## 🎯 Core Concepts
-
-### 🏠 Architecture
-Kyvro **Electron + React** architecture use करता है:
-- **Main Process** (Electron) - System operations और security
-- **Renderer Process** (React) - UI और user interactions
-- **IPC Bridge** - Secure communication between processes
-
-### 🔐 Security Model
-- **Context Isolation** - Renderer process isolation
-- **CSP Headers** - Content Security Policy
-- **Preload Scripts** - Secure API exposure
-- **Encrypted Storage** - Local data encryption
-
-### 📊 Data Flow
-1. **User Interaction** → React UI
-2. **IPC Request** → Main Process
-3. **Service Processing** → Business Logic
-4. **Database/API** → Data Operations
-5. **Response** → UI Update
-
----
-
-## 🛠️ Development Guide
-
-### 🎨 UI Components
-```typescript
-// Example usage of UI components
-import { Button, Card, Modal } from '@/components/ui';
-
-<Button variant="primary" size="md">
-  Send Campaign
-</Button>
-
-<Card variant="glass" hover>
-  Campaign Stats
-</Card>
-```
-
-### 🔌 Service Usage
-```typescript
-// Example service integration
-import { DatabaseService, WhatsAppApiService } from '@/services';
-
-const dbService = new DatabaseService();
-await dbService.initialize();
-
-const whatsappService = new WhatsAppApiService();
-await whatsappService.sendMessage(phone, message);
-```
-
-### 🎬 3D Animations
-```typescript
-// Example 3D animation usage
-import AnimatedLogo from '@/components/AnimatedLogo';
-
-<AnimatedLogo 
-  type="logo" 
-  className="w-32 h-32"
-  onMouseEnter={handleHover}
-/>
-```
-
----
-
-## 📋 API Documentation
-
-### WhatsApp Business API Integration
-```typescript
-// Send message
-await whatsappApi.sendMessage({
-  to: '+1234567890',
-  templateName: 'welcome',
-  language: 'en',
-  components: [...]
+client.on('qr', (qr) => {
+    // Generate and scan this code with your phone
+    console.log('QR RECEIVED', qr);
 });
 
-// Get templates
-const templates = await whatsappApi.getTemplates();
-```
-
-### Database Operations
-```typescript
-// Create campaign
-const campaignId = await dbService.createCampaign({
-  name: 'Welcome Series',
-  templateName: 'welcome',
-  totalContacts: 1000
+client.on('ready', () => {
+    console.log('Client is ready!');
 });
 
-// Get statistics
-const stats = await dbService.getDashboardStats();
-```
-
----
-
-## 🔧 Configuration
-
-### Environment Variables
-```bash
-# WhatsApp Business API
-WHATSAPP_API_URL=https://graph.facebook.com/...
-WHATSAPP_ACCESS_TOKEN=your_access_token
-WHATSAPP_PHONE_NUMBER_ID=your_phone_id
-
-# Database
-DB_PATH=./userData/kyvro.db
-
-# Application
-NODE_ENV=development
-LOG_LEVEL=info
-```
-
-### Application Settings
-```typescript
-// config/app.json
-{
-  "app": {
-    "name": "Kyvro Desktop",
-    "version": "1.0.0",
-    "window": {
-      "width": 1200,
-      "height": 800,
-      "minWidth": 800,
-      "minHeight": 600
+client.on('message', msg => {
+    if (msg.body == '!ping') {
+        msg.reply('pong');
     }
-  },
-  "api": {
-    "timeout": 30000,
-    "retryAttempts": 3
-  }
-}
+});
+
+client.initialize();
 ```
 
----
+Take a look at [example.js][examples] for another examples with additional use cases.  
+For further details on saving and restoring sessions, explore the provided [Authentication Strategies][auth-strategies].
 
-## 🚀 Deployment
 
-### Build for Production
-```bash
-# Build React app
-npm run build
+## Supported features
 
-# Build Electron app
-npm run electron:build
+| Feature  | Status |
+| ------------- | ------------- |
+| Multi Device  | ✅  |
+| Send messages  | ✅  |
+| Receive messages  | ✅  |
+| Send media (images/audio/documents)  | ✅  |
+| Send media (video)  | ✅ [(requires Google Chrome)][google-chrome]  |
+| Send stickers | ✅ |
+| Receive media (images/audio/video/documents)  | ✅  |
+| Send contact cards | ✅ |
+| Send location | ✅ |
+| Send buttons | ❌  [(DEPRECATED)][deprecated-video] |
+| Send lists | ❌  [(DEPRECATED)][deprecated-video] |
+| Receive location | ✅ | 
+| Message replies | ✅ |
+| Join groups by invite  | ✅ |
+| Get invite for group  | ✅ |
+| Modify group info (subject, description)  | ✅  |
+| Modify group settings (send messages, edit info)  | ✅  |
+| Add group participants  | ✅  |
+| Kick group participants  | ✅  |
+| Promote/demote group participants | ✅ |
+| Mention users | ✅ |
+| Mention groups | ✅ |
+| Mute/unmute chats | ✅ |
+| Block/unblock contacts | ✅ |
+| Get contact info | ✅ |
+| Get profile pictures | ✅ |
+| Set user status message | ✅ |
+| React to messages | ✅ |
+| Create polls | ✅ |
+| Channels | ✅ |
+| Vote in polls | 🔜 |
+| Communities | 🔜 |
 
-# Create distributables
-npm run dist
-```
+Something missing? Make an issue and let us know!
 
-### Platform-specific Builds
-```bash
-# Windows
-npm run dist:win
+## Contributing
 
-# macOS
-npm run dist:mac
+Feel free to open pull requests; we welcome contributions! However, for significant changes, it's best to open an issue beforehand. Make sure to review our [contribution guidelines][contributing] before creating a pull request. Before creating your own issue or pull request, always check to see if one already exists!
 
-# Linux
-npm run dist:linux
-```
+## Supporting the project
 
----
+You can support the maintainer of this project through the links below
 
-## 🤝 Contributing
+- [Support via GitHub Sponsors][gitHub-sponsors]
+- [Support via PayPal][support-payPal]
+- [Sign up for DigitalOcean][digitalocean] and get $200 in credit when you sign up (Referral)
 
-Contributions welcome हैं! Please follow these guidelines:
+## Disclaimer
 
-### Development Setup
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run tests: `npm test`
-5. Commit changes: `git commit -m 'Add amazing feature'`
-6. Push to branch: `git push origin feature/amazing-feature`
-7. Open Pull Request
+This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at [whatsapp.com][whatsapp]. "WhatsApp" as well as related names, marks, emblems and images are registered trademarks of their respective owners. Also it is not guaranteed you will not be blocked by using this method. WhatsApp does not allow bots or unofficial clients on their platform, so this shouldn't be considered totally safe.
 
-### Code Style
-- **TypeScript** strict mode
-- **ESLint** rules follow करें
-- **Prettier** formatting use करें
-- **Conventional Commits** message format follow करें
+## License
 
----
+Copyright 2019 Pedro S Lopez  
 
-## 📄 License
+Licensed under the Apache License, Version 2.0 (the "License");  
+you may not use this project except in compliance with the License.  
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  
 
-यह project **MIT License** के तहत licensed है। Details के लिए [LICENSE](LICENSE) file देखें।
+Unless required by applicable law or agreed to in writing, software  
+distributed under the License is distributed on an "AS IS" BASIS,  
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
+See the License for the specific language governing permissions and  
+limitations under the License.  
 
----
 
-## 🆘 Support
-
-### Help & Documentation
-- 📖 [Documentation](docs/README.md)
-- 🐛 [Issue Tracker](https://github.com/your-username/kyvro-desktop/issues)
-- 💬 [Discussions](https://github.com/your-username/kyvro-desktop/discussions)
-
-### Contact
-- 📧 Email: support@kyvro.com
-- 🐦 Twitter: [@kyvro_app](https://twitter.com/kyvro_app)
-- 💬 Discord: [Join our community](https://discord.gg/kyvro)
-
----
-
-## 🎉 Acknowledgments
-
-- **Electron Team** - Amazing desktop framework
-- **React Community** - Excellent UI library
-- **Three.js** - Powerful 3D graphics
-- **WhatsApp Business** - API platform
-- **Discord Design Team** - UI inspiration
-
----
-
-<div align="center">
-
-**Made with ❤️ by the Kyvro Team**
-
-[![Back to top](https://img.shields.io/badge/Back%20to%20top-000000?style=for-the-badge)](#kyvro-desktop)
-
-</div>
+[guide]: https://guide.wwebjs.dev/guide
+[guide-source]: https://github.com/wwebjs/wwebjs.dev/tree/main
+[documentation]: https://docs.wwebjs.dev/
+[documentation-source]: https://github.com/pedroslopez/whatsapp-web.js/tree/main/docs
+[discord]: https://discord.gg/H7DqQs4
+[gitHub]: https://github.com/pedroslopez/whatsapp-web.js
+[npm]: https://npmjs.org/package/whatsapp-web.js
+[nodejs]: https://nodejs.org/en/download/
+[examples]: https://github.com/pedroslopez/whatsapp-web.js/blob/master/example.js
+[auth-strategies]: https://wwebjs.dev/guide/creating-your-bot/authentication.html
+[google-chrome]: https://wwebjs.dev/guide/creating-your-bot/handling-attachments.html#caveat-for-sending-videos-and-gifs
+[deprecated-video]: https://www.youtube.com/watch?v=hv1R1rLeVVE
+[gitHub-sponsors]: https://github.com/sponsors/pedroslopez
+[support-payPal]: https://www.paypal.me/psla/
+[digitalocean]: https://m.do.co/c/73f906a36ed4
+[contributing]: https://github.com/pedroslopez/whatsapp-web.js/blob/main/CODE_OF_CONDUCT.md
+[whatsapp]: https://whatsapp.com
